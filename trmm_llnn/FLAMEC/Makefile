@@ -1,7 +1,7 @@
-HOME       := ../../../Resources
-BLAS_LIB   := $(HOME)/lib/libopenblas_sandybridgep-r0.2.20.a
-FLAME_LIB  := $(HOME)/lib/libflame-x86_64-5.1.0-36.a
-FLAME_INC  := $(HOME)/include
+HOME       := /u/rvdg
+BLAS_LIB   := $(HOME)/blis/lib/libblis.a
+FLAME_LIB  := $(HOME)/flame/lib/libflame.a
+FLAME_INC  := $(HOME)/flame/include
 
 # indicate where the object files are to be created
 CC         := gcc
@@ -16,7 +16,7 @@ NFIRST     := 100#     smallest size to be timed.
 NLAST      := 1500#    largest size to be timed.
 NINC       := 100#     increment between sizes.
 
-LDFLAGS    := -lpthread -m64 -lm 
+LDFLAGS    := -lpthread -m64 -lm  -fopenmp
 
 # indicate where the FLAME include files reside
 
