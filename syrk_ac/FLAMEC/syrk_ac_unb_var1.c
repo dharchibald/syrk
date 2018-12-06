@@ -37,6 +37,8 @@ int syrk_ac_unb_var1( FLA_Obj A, FLA_Obj C )
     /*------------------------------------------------------------*/
 
     /*                       update line 1                        */
+    FLA_Gemv( FLA_TRANSPOSE, FLA_ONE, A0, a1, FLA_ONE, c01);
+    FLA_Dots( FLA_ONE, a1, a1, FLA_ONE, gamma11);
     /*                             :                              */
     /*                       update line n                        */
 
