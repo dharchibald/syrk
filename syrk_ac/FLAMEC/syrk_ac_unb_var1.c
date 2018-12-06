@@ -10,7 +10,7 @@
 
 #include "FLAME.h"
 
-int Syrk_ut(A,C)_unb_var1( FLA_Obj A, FLA_Obj C )
+int syrk_ac_unb_var1( FLA_Obj A, FLA_Obj C )
 {
   FLA_Obj AL,    AR,       A0,  a1,  A2;
 
