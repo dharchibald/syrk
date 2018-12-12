@@ -15,6 +15,10 @@
 
 void syrk_ac_unb_var1( FLA_Obj, FLA_Obj );
 void syrk_ac_blk_var1( FLA_Obj, FLA_Obj, int );
+void syrk_ac_unb_var2( FLA_Obj, FLA_Obj );
+void syrk_ac_blk_var2( FLA_Obj, FLA_Obj, int );
+void syrk_ac_unb_var3( FLA_Obj, FLA_Obj );
+void syrk_ac_blk_var3( FLA_Obj, FLA_Obj, int );
 
 int main(int argc, char *argv[])
 {
@@ -95,7 +99,11 @@ int main(int argc, char *argv[])
       //      FLA_Trmm( FLA_LEFT, FLA_LOWER_TRIANGULAR, FLA_NO_TRANSPOSE, FLA_NONUNIT_DIAG, FLA_ONE, Lobj, Bobj );
       //trmm_llnn_unb_var1( Lobj, Bobj );
       //syrk_ac_unb_var1( Aobj, Cobj );
-      syrk_ac_blk_var1( Aobj, Cobj, 256);
+      //syrk_ac_blk_var1( Aobj, Cobj, 256);
+      //syrk_ac_unb_var2( Aobj, Cobj );
+      //syrk_ac_blk_var2( Aobj, Cobj, 256 );
+      //syrk_ac_unb_var3( Aobj, Cobj );
+      syrk_ac_blk_var3( Aobj, Cobj, 256 );
 
       /* stop clock */
       dtime = FLA_Clock() - dtime;
