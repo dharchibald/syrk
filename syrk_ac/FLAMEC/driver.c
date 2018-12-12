@@ -14,6 +14,7 @@
 #define FALSE 0
 
 void syrk_ac_unb_var1( FLA_Obj, FLA_Obj );
+void syrk_ac_blk_var1( FLA_Obj, FLA_Obj, int );
 
 int main(int argc, char *argv[])
 {
@@ -67,7 +68,7 @@ int main(int argc, char *argv[])
 	 lower triangular part of array L, by calling FLA_Trmm.  The
 	 result ends up in Bref, which we will consider to be the
 	 correct result. */
-      FLA_Syrk( FLA_UPPER_TRIANGULAR, FLA_NO_TRANSPOSE, FLA_ONE, Aobj, FLA_ONE, Cref );
+      FLA_Syrk( FLA_UPPER_TRIANGULAR, FLA_TRANSPOSE, FLA_ONE, Aobj, FLA_ONE, Cref );
       
       /* stop clock */
       dtime = FLA_Clock() - dtime;
@@ -93,7 +94,8 @@ int main(int argc, char *argv[])
       /* Comment out the below call and call your routine instead */
       //      FLA_Trmm( FLA_LEFT, FLA_LOWER_TRIANGULAR, FLA_NO_TRANSPOSE, FLA_NONUNIT_DIAG, FLA_ONE, Lobj, Bobj );
       //trmm_llnn_unb_var1( Lobj, Bobj );
-      syrk_ac_unb_var1( Aobj, Cobj );
+      //syrk_ac_unb_var1( Aobj, Cobj );
+      syrk_ac_blk_var1( Aobj, Cobj, 256);
 
       /* stop clock */
       dtime = FLA_Clock() - dtime;
